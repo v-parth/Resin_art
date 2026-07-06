@@ -1,0 +1,162 @@
+/* ==========================================================================
+   PRODUCT CARD & HERO: BASE & MOBILE (Default View)
+   ========================================================================== */
+.product-hero {
+  text-align: center;
+  padding-top: 100px; /* Tighter padding for mobile screens */
+  padding-bottom: 40px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.product-hero h1 {
+  font-size: 2rem; /* Scaled down for mobile viewports */
+  color: #ffffff;
+  margin-bottom: 12px;
+}
+
+.product-hero p {
+  font-size: 1rem;
+  color: var(--text-muted, #a394a8); /* Linked to cohesive theme variable */
+  line-height: 1.5;
+}
+
+/* Base Card Styling */
+.product-card {
+  /* Blends with cosmic-bg instead of introducing mismatched slate blues */
+  background: rgba(13, 6, 20, 0.7); 
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(74, 21, 75, 0.4); /* Subtly framed with nebula purple */
+  border-radius: 16px;
+  overflow: hidden;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
+              box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.4s ease;
+  cursor: pointer;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* Smooth Interactive States */
+.product-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(255, 42, 133, 0.4); /* Glow expands on hover */
+  box-shadow: 0 15px 35px rgba(255, 77, 141, 0.25);
+}
+
+.product-image {
+  width: 100%;
+  height: 200px; /* Perfect square-ish aspect ratio for mobile layouts */
+  overflow: hidden;
+}
+
+.product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.product-card:hover .product-image img {
+  transform: scale(1.05);
+}
+
+.product-info {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1;
+}
+
+.category {
+  align-self: flex-start; /* Keeps capsule from stretching wide */
+  padding: 4px 12px;
+  border-radius: 20px;
+  background: #ff4d8d;
+  color: #ffffff;
+  font-size: 0.75rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.product-info h3 {
+  color: #ffffff;
+  font-size: 1.25rem;
+  margin: 0 0 10px 0;
+}
+
+.product-info p {
+  color: var(--text-primary, #f5f0f6); /* Crisp, bright purple-white for contrast */
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0 0 20px 0;
+}
+
+.product-info button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 30px;
+  background: linear-gradient(90deg, #ff4d8d, #7b4dff);
+  color: #ffffff;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-info button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 15px rgba(255, 77, 141, 0.35);
+}
+
+/* ==========================================================================
+   RESPONSIVE SCALING: TABLET
+   ========================================================================== */
+@media (min-width: 769px) {
+  .product-hero {
+    padding-top: 140px;
+    padding-bottom: 50px;
+  }
+
+  .product-hero h1 {
+    font-size: 2.75rem;
+  }
+
+  .product-hero p {
+    font-size: 1.15rem;
+  }
+
+  .product-card {
+    border-radius: 20px;
+  }
+
+  .product-image {
+    height: 230px;
+  }
+
+  .product-info h3 {
+    font-size: 1.4rem;
+  }
+}
+
+/* ==========================================================================
+   RESPONSIVE SCALING: DESKTOP
+   ========================================================================== */
+@media (min-width: 1025px) {
+  .product-hero h1 {
+    font-size: 3.5rem;
+  }
+
+  .product-image {
+    height: 260px;
+  }
+
+  .product-info h3 {
+    font-size: 1.5rem;
+  }
+}

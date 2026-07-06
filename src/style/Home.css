@@ -1,0 +1,497 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body{
+    background: #fff7f9; /* Soft off-white pink */
+    color: #4a3e42; /* Soft deep charcoal-pink for body text */
+    overflow-x: hidden;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+.home{
+    min-height: 100vh;
+    background: linear-gradient(180deg, #fff7f9 0%, #ffeef3 50%, #fff7f9 100%);
+    color: #2c2527; /* Dark elegant charcoal for readability */
+    position: relative;
+    overflow: hidden;
+}
+
+/* Background Ambient Glows */
+.home::before{
+    content: "";
+    position: absolute;
+    width: 550px;
+    height: 550px;
+    background: #ffb6c1;
+    filter: blur(220px);
+    opacity: 0.25;
+    top: -180px;
+    left: -180px;
+    animation: moveGlow1 12s infinite alternate;
+}
+
+.home::after{
+    content: "";
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background: #ffc0cb;
+    filter: blur(220px);
+    opacity: 0.2;
+    bottom: -150px;
+    right: -150px;
+    animation: moveGlow2 12s infinite alternate;
+}
+
+@keyframes moveGlow1{
+    from { transform: translate(0, 0); }
+    to { transform: translate(150px, 120px); }
+}
+
+@keyframes moveGlow2{
+    from { transform: translate(0, 0); }
+    to { transform: translate(-150px, -120px); }
+}
+
+/* ==========================
+        HERO SECTION
+========================== */
+.hero{
+    min-height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 60px;
+    padding: 140px 8% 80px;
+}
+
+.hero-left{
+    flex: 1;
+}
+
+.hero-right{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.small-title{
+    letter-spacing: 3px;
+    color: #ff5c8a; /* Bright accent pink */
+    margin-bottom: 25px;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.hero-left h1{
+    font-size: clamp(2.5rem, 6vw, 4.8rem);
+    line-height: 1.2;
+    margin-bottom: 25px;
+    font-weight: 800;
+    color: #2c2527;
+}
+
+.hero-text{
+    font-size: 18px;
+    line-height: 32px;
+    color: #615257; /* Slightly lighter readable text */
+    margin-bottom: 40px;
+    max-width: 600px;
+}
+
+.hero-buttons{
+    display: flex;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.shop-btn{
+    padding: 16px 38px;
+    border: none;
+    border-radius: 50px;
+    background: linear-gradient(90deg, #ff6da0, #ffa4c3); /* Elegant pink tones */
+    color: white;
+    font-size: 17px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.shop-btn:hover{
+    transform: translateY(-6px);
+    box-shadow: 0 10px 25px rgba(255, 109, 160, 0.4);
+}
+
+.learn-btn{
+    padding: 16px 38px;
+    border-radius: 50px;
+    background: transparent;
+    border: 2px solid #ff6da0;
+    color: #ff6da0;
+    font-size: 17px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.learn-btn:hover{
+    background: #ff6da0;
+    color: white;
+    transform: translateY(-6px);
+    box-shadow: 0 10px 25px rgba(255, 109, 160, 0.2);
+}
+
+/* ==========================
+     GLASS CARD (HERO)
+========================== */
+.glass-card{
+    /* position: relative; */
+    width: 100%;
+    max-width: 470px;
+    /* aspect-ratio: 1; */
+    border-radius: 35px;
+    background: rgba(255, 255, 255, 0.6); /* Soft translucent white glass */
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 20px 40px rgba(255, 182, 193, 0.25);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    animation: floatCard 4s ease-in-out infinite;
+}
+
+.glass-card{
+    position:relative;
+    width: 100%;
+    max-width: 500px;
+    aspect-ratio: 1;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    backdrop-filter: none;
+    border-radius: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: none;
+    overflow: visible;
+    animation: floatCard 4s ease-in-out infinite;
+}
+.glass-card h2{
+    font-size: 42px;
+    margin-bottom: 20px;
+    color: #2c2527;
+    z-index: 5;
+}
+
+.glass-card p{
+    width: 75%;
+    text-align: center;
+    line-height: 30px;
+    color: #615257;
+    z-index: 5;
+}
+
+.circle{
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(20px);
+}
+
+.circle1{
+    width: 220px;
+    height: 220px;
+    background: #ffb6c1;
+    top: -60px;
+    left: -60px;
+    opacity: .5;
+}
+
+.circle2{
+    width: 170px;
+    height: 170px;
+    background: #ffa4c3;
+    bottom: -50px;
+    right: -50px;
+    opacity: .5;
+}
+
+.circle3{
+    width: 120px;
+    height: 120px;
+    background: #ffffff;
+    opacity: .6;
+    top: 45%;
+    left: 45%;
+}
+
+@keyframes floatCard{
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-18px); }
+    100% { transform: translateY(0); }
+}
+
+/* ==========================
+        FEATURES SECTION
+========================== */
+.features{
+    width: 90%;
+    max-width: 1200px;
+    margin: 100px auto;
+    text-align: center;
+}
+
+.features h2{
+    font-size: 48px;
+    margin-bottom: 60px;
+    color: #2c2527;
+}
+
+.feature-grid{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+
+.feature-card{
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-radius: 25px;
+    padding: 40px 25px;
+    box-shadow: 0 10px 30px rgba(255, 182, 193, 0.15);
+    transition: .45s;
+}
+
+.feature-card:hover{
+    transform: translateY(-15px) scale(1.03);
+    box-shadow: 0 20px 40px rgba(255, 109, 160, 0.2);
+}
+
+.feature-card h3{
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #2c2527;
+}
+
+.feature-card p{
+    color: #615257;
+    line-height: 28px;
+}
+
+/* ==========================
+        PRODUCTS SECTION
+========================== */
+.products{
+    width: 90%;
+    max-width: 1250px;
+    margin: 120px auto;
+    text-align: center;
+}
+
+.products h2{
+    font-size: 48px;
+    margin-bottom: 60px;
+    color: #2c2527;
+}
+
+.product-grid{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 35px;
+}
+
+.product-card{
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 30px;
+    padding: 25px;
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    box-shadow: 0 10px 30px rgba(255, 182, 193, 0.15);
+    transition: .45s;
+}
+
+.product-card:hover{
+    transform: translateY(-15px) scale(1.03);
+    box-shadow: 0 20px 40px rgba(255, 182, 193, 0.4);
+}
+
+.product-image{
+    width: 100%;
+    height: 250px;
+    border-radius: 20px;
+    background: linear-gradient(135deg, #ffb6c1, #ffeef3); /* Pearlescent off-white/pink filler */
+    margin-bottom: 25px;
+}
+
+.product-card h3{
+    font-size: 26px;
+    margin-bottom: 25px;
+    color: #2c2527;
+}
+
+.product-card button{
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 40px;
+    background: linear-gradient(90deg, #ff6da0, #ffa4c3);
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.product-card button:hover{
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(255, 109, 160, 0.3);
+}
+
+/* ==========================
+       CTA SECTION
+========================== */
+.cta{
+    width: 90%;
+    max-width: 1200px;
+    margin: 120px auto;
+    text-align: center;
+    padding: 80px 40px;
+    background: linear-gradient(135deg, #ff6da0, #ffa4c3); /* Main off-pink branding gradient */
+    border-radius: 35px;
+    box-shadow: 0 15px 35px rgba(255, 109, 160, 0.3);
+    color: white;
+}
+
+.cta h2{
+    font-size: 48px;
+    margin-bottom: 35px;
+    color: white;
+}
+
+.cta p{
+    margin-bottom: 30px;
+    font-size: 18px;
+    opacity: 0.9;
+}
+
+.cta button{
+    padding: 18px 45px;
+    border: none;
+    border-radius: 40px;
+    background: white;
+    color: #ff6da0;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.cta button:hover{
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(255, 255, 255, 0.3);
+}
+
+/* ==========================
+         FOOTER
+========================== */
+footer{
+    margin-top: 100px;
+    padding: 40px;
+    text-align: center;
+    color: #8a7a80;
+    border-top: 1px solid rgba(255, 182, 193, 0.3);
+}
+
+/* ==========================
+      GLOBAL ANIMATIONS
+========================== */
+.hero, .features, .products, .cta{
+    animation: fadeUp 1s ease;
+}
+
+@keyframes fadeUp{
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.logo{
+    animation: logoGlow 2s infinite alternate;
+}
+
+@keyframes logoGlow{
+    from { text-shadow: 0 0 5px rgba(255, 109, 160, 0.2); }
+    to { text-shadow: 0 0 15px rgba(255, 109, 160, 0.5); }
+}
+
+/* ==========================
+      RESPONSIVE QUERIES
+========================== */
+@media(max-width: 1000px){
+    .hero{
+        flex-direction: column;
+        text-align: center;
+    }
+    .hero-left h1{
+        font-size: 55px;
+        line-height: 70px;
+    }
+    .hero-buttons{
+        justify-content: center;
+    }
+    .feature-grid, .product-grid{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media(max-width: 768px){
+    .hero{
+        padding-top: 180px;
+    }
+    .hero-left h1{
+        font-size: 42px;
+        line-height: 55px;
+    }
+    .hero-text{
+        font-size: 16px;
+    }
+    .glass-card{
+        max-width: 340px;
+    }
+    .features h2, .products h2, .cta h2{
+        font-size: 34px;
+    }
+    .feature-grid, .product-grid{
+        grid-template-columns: 1fr;
+    }
+}
+
+@media(max-width: 480px){
+    .hero-buttons{
+        flex-direction: column;
+        width: 100%;
+    }
+    .shop-btn, .learn-btn{
+        width: 100%;
+    }
+    .glass-card{
+        max-width: 280px;
+    }
+}
+
+

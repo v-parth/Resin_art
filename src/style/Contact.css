@@ -1,0 +1,246 @@
+/* ================= HERO ================= */
+
+.contact-hero{
+    text-align:center;
+    padding:120px 20px 50px;
+}
+
+.contact-hero h1{
+    font-size:52px;
+    color:#ff4d8d;
+    font-weight:700;
+    margin-bottom:15px;
+}
+
+.contact-hero p{
+    max-width:650px;
+    margin:auto;
+    color:#555;
+    line-height:30px;
+    font-size:18px;
+}
+
+/* ================= CONTACT SECTION ================= */
+
+.contact-container{
+    width:100%;
+    display:flex;
+    justify-content:center;
+    padding:40px 20px 80px;
+}
+
+/* ================= CONTACT CARD ================= */
+
+.contact-buttons{
+
+    width:100%;
+    max-width:650px;
+
+    background:#fff;
+
+    border:1px solid #f2d2de;
+
+    border-radius:25px;
+
+    padding:35px;
+
+    box-shadow:0 10px 35px rgba(0,0,0,.08);
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+}
+
+.contact-buttons h2{
+
+    font-size:34px;
+
+    color:#333;
+
+    margin-bottom:30px;
+
+}
+
+/* ================= BUTTON GROUP ================= */
+
+.btn-group{
+
+    width:100%;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:20px;
+
+}
+
+/* ================= BUTTON ================= */
+
+.btn{
+
+    width:100%;
+
+    height:65px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:15px;
+
+    border-radius:50px;
+
+    text-decoration:none;
+
+    color:#fff;
+
+    font-size:22px;
+
+    font-weight:600;
+
+    transition:.35s;
+
+}
+
+/* ICON */
+
+.icon{
+
+    font-size:26px;
+
+}
+
+/* WhatsApp */
+
+.whatsapp{
+
+    background:#25D366;
+
+}
+
+/* Call */
+
+.call{
+
+    background:#ff4d8d;
+
+}
+
+/* Instagram */
+
+.insta{
+
+    background:linear-gradient(
+        90deg,
+        #feda75,
+        #fa7e1e,
+        #d62976,
+        #962fbf,
+        #4f5bd5
+    );
+
+}
+
+/* Hover */
+
+.btn:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:0 12px 25px rgba(0,0,0,.18);
+
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:768px){
+
+.contact-hero{
+
+padding:100px 20px 40px;
+
+}
+
+.contact-hero h1{
+
+font-size:38px;
+
+}
+
+.contact-hero p{
+
+font-size:16px;
+
+line-height:28px;
+
+}
+
+.contact-buttons{
+
+padding:25px 20px;
+
+max-width:100%;
+
+}
+
+.contact-buttons h2{
+
+font-size:28px;
+
+}
+
+.btn{
+
+height:58px;
+
+font-size:18px;
+
+}
+
+.icon{
+
+font-size:22px;
+
+}
+
+}
+
+@media(max-width:480px){
+
+.contact-hero h1{
+
+font-size:32px;
+
+}
+
+.contact-buttons{
+
+border-radius:18px;
+
+padding:20px 15px;
+
+}
+
+.btn{
+
+height:54px;
+
+font-size:16px;
+
+gap:10px;
+
+}
+
+.icon{
+
+font-size:20px;
+
+}
+
+}

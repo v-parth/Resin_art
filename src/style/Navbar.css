@@ -1,0 +1,192 @@
+/* ==========================================================================
+   NAVBAR: BASE & MOBILE (Default View)
+   ========================================================================== */
+.navbar {
+  position: fixed;
+  top: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 92%;
+  max-width: 1250px;
+  padding: 12px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* Deep cosmic dark base ensures text legibility over busy background spots */
+  background: rgba(13, 6, 20, 0.75);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 42, 133, 0.15); /* Subtly tinted rose border */
+  border-radius: 40px;
+  z-index: 1000;
+}
+
+/* Logo Styling */
+.logo a {
+  text-decoration: none;
+  font-size: 1.35rem;
+  font-weight: 700;
+  background: linear-gradient(90deg, #ff4d8d, #7b4dff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+/* Mobile Slide-out Drawer */
+.nav-links {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 260px;
+  height: 100vh;
+  background: #0d0614; /* Solid cosmic theme background */
+  border-left: 1px solid rgba(255, 42, 133, 0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  transition: right 0.35s ease-in-out;
+  box-shadow: -10px 0 40px rgba(0, 0, 0, 0.6);
+}
+
+.nav-links.show {
+  right: 0;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--text-primary, #f5f0f6);
+  font-size: 1.1rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #ff4d8d;
+}
+
+/* Mobile & Desktop Buttons */
+.nav-btn {
+  padding: 10px 24px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #ffffff;
+  background: linear-gradient(90deg, #ff4d8d, #7b4dff);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.nav-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 20px rgba(255, 77, 141, 0.4);
+}
+
+.mobile-btn {
+  display: block;
+}
+
+.desktop-btn {
+  display: none;
+}
+
+/* Hamburger Menu Toggle */
+.hamburger {
+  display: block;
+  cursor: pointer;
+  z-index: 1002;
+}
+
+.hamburger span {
+  display: block;
+  width: 26px;
+  height: 3px;
+  margin: 5px 0;
+  background: #ffffff;
+  border-radius: 4px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Hamburger Transform to X when active */
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 6px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -6px);
+}
+
+/* ==========================================================================
+   RESPONSIVE SCALING: TABLET / SMALL DESKTOP
+   ========================================================================== */
+@media (min-width: 480px) {
+  .logo a {
+    font-size: 1.5rem;
+  }
+}
+
+@media (min-width: 769px) {
+  .navbar {
+    padding: 14px 32px;
+  }
+
+  .hamburger, .mobile-btn {
+    display: none;
+  }
+
+  .desktop-btn {
+    display: block;
+  }
+
+  /* Reset Mobile Drawer back into a standard horizontal navigation layout */
+  .nav-links {
+    position: static;
+    width: auto;
+    height: auto;
+    background: transparent;
+    border-left: none;
+    flex-direction: row;
+    gap: 32px;
+    box-shadow: none;
+  }
+
+  .nav-links a {
+    font-size: 1rem;
+    position: relative;
+  }
+
+  /* Premium reveal underline for desktop layout */
+  .nav-links a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 0;
+    height: 2px;
+    background: #ff4d8d;
+    transition: width 0.3s ease;
+  }
+
+  .nav-links a:hover::after {
+    width: 100%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .navbar {
+    padding: 16px 35px;
+  }
+  
+  .nav-links {
+    gap: 40px;
+  }
+}
